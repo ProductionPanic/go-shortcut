@@ -63,3 +63,7 @@ func FileExists(filePath string) bool {
 	_, err := os.Stat(filePath)
 	return !os.IsNotExist(err)
 }
+
+func ReadFile(filePath string) ([]byte, error) {
+	return os.ReadFile(filePath)
+}

@@ -33,6 +33,15 @@ func main() {
 		}
 		store.Remove(args[1])
 		fmt.Println(colors.Render("Removed alias "+args[1], colors.SUCCESS))
+	case "list":
+		store.List()
+	case "run":
+		if len(args) != 2 {
+			printHelp()
+			return
+		}
+		store.Run(args[1])
+
 	default:
 		printHelp()
 	}
